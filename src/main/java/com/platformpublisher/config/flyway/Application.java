@@ -2,6 +2,7 @@ package com.platformpublisher.config.flyway;
 
 import org.flywaydb.core.Flyway;
 
+import org.flywaydb.core.api.Location;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -12,13 +13,15 @@ public class Application {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext App = SpringApplication.run(Application.class, args);
 		
-		String url = "jdbc:postgresql://localhost:5432/Test";
+		String url = "jdbc:postgresql://localhost:5440/Publisher_Data";
 		String user = "postgres";
-		String password = "root1374";
+		String password = "postgres";
+		Location migrationLoc = new Location("com/platformpublisher/config/db/migration");
 		
 		Flyway flyway = Flyway
 				.configure()
 				.dataSource(url,user,password)
+				.locations(migrationLoc)
 				.load();
 		
 		flyway.clean();
