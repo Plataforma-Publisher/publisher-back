@@ -13,7 +13,7 @@ public class Application {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext App = SpringApplication.run(Application.class, args);
 		
-		String url = "jdbc:postgresql://localhost:5440/Publisher_Data";
+		String url = "jdbc:postgresql://localhost:5440/publisher";
 		String user = "postgres";
 		String password = "postgres";
 		Location migrationLoc = new Location("com/platformpublisher/config/db/migration");

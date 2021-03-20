@@ -1,5 +1,5 @@
 
-package com.platformpublisher.springboothelloworld;
+package com.platformpublisher;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
