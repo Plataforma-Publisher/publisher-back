@@ -1,4 +1,4 @@
-package com.platformpublisher.config.flyway;
+package com.platformpublisher;
 
 import org.flywaydb.core.Flyway;
 

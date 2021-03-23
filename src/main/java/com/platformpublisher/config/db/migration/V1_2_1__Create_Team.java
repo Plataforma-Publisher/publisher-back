@@ -1,6 +1,5 @@
 package com.platformpublisher.config.db.migration;
 
-import java.sql.ResultSet;
 import java.sql.Statement;
 
 import org.flywaydb.core.api.migration.BaseJavaMigration;

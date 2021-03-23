@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,13 +29,20 @@ public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(value = AccessLevel.PROTECTED)
     private Long id;
-    private String fullName;
-    private String nameUser;
+
+    @Column(name = "full_name") private String fullName;
+
+    @Column(name = "name_user") private String nameUser;
+
     private String email;
-    @Getter(value = AccessLevel.NONE)
-    private String password;
-    private LocalDate createdAt;
-    private Boolean accountActivity;
-    private String linkedIn;
+
+    @Getter(value = AccessLevel.NONE) private String password;
+
+    @Column(name = "created_at") private LocalDate createdAt;
+
+    @Column(name = "account_activity") private Boolean accountActivity;
+
+    @Column(name = "linked_in") private String linkedIn;
+
     private String github;
 }
