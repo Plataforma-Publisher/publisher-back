@@ -13,7 +13,7 @@ public class V1_1_1__Create_User extends BaseJavaMigration {
 		String createTableUserSQL = "CREATE TABLE users(\n" +
 				"\tid SERIAL PRIMARY KEY,\n" +
 				"\tfull_name varchar(150) NOT NULL,\n" +
-				"\tname_user varchar(30) NOT NULL,\n" +
+				"\tname_user varchar(30),\n" +
 				"\temail varchar(50) NOT NULL,\n" +
 				"\tpassword varchar(50) NOT NULL,\n" +
 				"\tcreated_at date NOT NULL,\n" +

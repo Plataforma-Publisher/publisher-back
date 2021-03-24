@@ -2,7 +2,6 @@ package com.platformpublisher.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -19,7 +18,6 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
-@Builder
 @Data
 @AllArgsConstructor @NoArgsConstructor
 @EqualsAndHashCode(of = "id") @ToString(exclude = "password")

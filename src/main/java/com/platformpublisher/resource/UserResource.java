@@ -1,15 +1,17 @@
 package com.platformpublisher.resource;
 
-import com.platformpublisher.model.User;
+import com.platformpublisher.dto.request.UserRequestDTO;
+import com.platformpublisher.dto.response.UserResponseDTO;
 import com.platformpublisher.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -19,9 +21,8 @@ public class UserResource {
     private final UserService userService;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody User user) {
-        userService.save(user);
+    public ResponseEntity<UserResponseDTO> save(@RequestBody @Valid UserRequestDTO userRequestDTO) {
+        return userService.save(userRequestDTO);
     }
 }
 
