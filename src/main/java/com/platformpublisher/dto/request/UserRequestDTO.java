@@ -6,19 +6,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Data @Builder @NoArgsConstructor @AllArgsConstructor
 public class UserRequestDTO {
 
-    @NotNull @Size(max = 150) private String fullName;
+    @NotEmpty(message = "The full name must be informed")
+    @Size(max = 150)
+    private String fullName;
 
     @Size(max = 30) private String nameUser;
 
-    @NotNull @Email @Size(max = 50) private String email;
+    @Email
+    @NotEmpty(message = "The email must be informed")
+    @Size(max = 50, message = "Email must be a maximum of 50 characters")
+    private String email;
 
-    @NotNull @Size(max = 50) private String password;
+    @NotEmpty (message = "The password must be informed")
+    @Size(max = 50, message = "Password must be a maximum of 50 characters")
+    private String password;
 
     private String linkedIn;
     private String github;
