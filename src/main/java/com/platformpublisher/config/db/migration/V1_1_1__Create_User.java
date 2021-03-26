@@ -17,7 +17,7 @@ public class V1_1_1__Create_User extends BaseJavaMigration {
 				"\temail varchar(50) NOT NULL,\n" +
 				"\tpassword varchar(50) NOT NULL,\n" +
 				"\tcreated_at date NOT NULL,\n" +
-				"\taccount_activity boolean NOT NULL,\n" +
+				"\taccount_activity smallint NOT NULL,\n" +
 				"\tlinked_in varchar(100),\n" +
 				"\tgithub varchar(100)\n" +
 				");";

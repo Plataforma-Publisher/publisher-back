@@ -81,7 +81,7 @@
 			             classpath:com/platformpublisher/config/db/migration
 			         </location>
 			         <location>
-			             filesystem:db/migration
+			             filesystem:com/platformpublisher/config/db/migration
 			         </location>
 			      </locations>
 			   </configuration>

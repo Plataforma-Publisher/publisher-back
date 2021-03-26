@@ -13,10 +13,11 @@ import javax.validation.constraints.Size;
 public class UserRequestDTO {
 
     @NotEmpty(message = "The full name must be informed")
-    @Size(max = 150)
+    @Size(max = 150, message = "Full name must be a maximum of 50 characters")
     private String fullName;
 
-    @Size(max = 30) private String nameUser;
+    @Size(max = 30, message = "User name must be a maximum of 30 characters")
+    private String nameUser;
 
     @Email
     @NotEmpty(message = "The email must be informed")
