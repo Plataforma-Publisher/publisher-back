@@ -7,6 +7,7 @@ import com.platformpublisher.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,10 +37,15 @@ public class UserResource {
     }
 
     @PutMapping("/{userId}")
-    public String updateUser (@PathVariable Long userId, @RequestBody
+    public UserResponseDTO updateUser(@PathVariable Long userId, @RequestBody
             UserRequestDTO userRequestDTO) throws BadRequestException {
 
         return userService.updateUser(userId, userRequestDTO);
+    }
+
+    @DeleteMapping("/{userId}")
+    public void deleteUser(@PathVariable Long userId) {
+        userService.deleteUser(userId);
     }
 }
 

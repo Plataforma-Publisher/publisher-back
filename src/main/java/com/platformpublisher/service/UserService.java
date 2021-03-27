@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor(onConstructor_ = {@Autowired})
@@ -38,16 +39,23 @@ public class UserService {
     }
 
     public UserResponseDTO getUserById(Long userId) throws BadRequestException {
-        User optionalUser = verifyIfExists(userId);
+        verifyIfExists(userId);
+        User user = userRepository.findByIdAndAccountActivity(userId, UserType.ACTIVE);
 
-        return userMapper.toDto(optionalUser);
+        return userMapper.toDto(user);
     }
 
-    public String updateUser(Long userId, UserRequestDTO userRequestDTO) throws BadRequestException {
+    public UserResponseDTO updateUser(Long userId, UserRequestDTO userRequestDTO) throws BadRequestException {
         User userFound = verifyIfExists(userId);
         userMapper.updateUser(userRequestDTO, userFound);
         userRepository.save(userFound);
 
-        return "User updated with success";
+        return userMapper.toDto(userFound);
+    }
+
+    public void deleteUser(Long userId) throws BadRequestException {
+        User userFound = verifyIfExists(userId);
+        userFound.setAccountActivity(UserType.INACTIVE);
+        userRepository.save(userFound);
     }
 }

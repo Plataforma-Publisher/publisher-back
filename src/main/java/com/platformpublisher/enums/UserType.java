@@ -6,8 +6,8 @@ import lombok.Getter;
 @Getter @AllArgsConstructor
 public enum UserType {
 
-    ACTIVE("Active"),
-    INACTIVE("Inactive");
+    INACTIVE("Inactive"),
+    ACTIVE("Active");
 
     private final String description ;
 }

@@ -1,7 +1,6 @@
 package com.platformpublisher;
 
 import org.flywaydb.core.Flyway;
-
 import org.flywaydb.core.api.Location;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,7 +24,7 @@ public class Application {
 				.load();
 		
 		flyway.clean();
-		
+
 		flyway.migrate();
 		flyway.info();
 	}
