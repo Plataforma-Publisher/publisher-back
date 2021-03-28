@@ -1,13 +1,13 @@
-package com.platformpublisher.springboothelloworld;
+package com.platformpublisher;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 @SpringBootTest
-class SpringbootHelloworldApplicationTests {
+class UserTest {
 
 	@Test
-	void contextLoads() {
+	void addUser() {
 	}
-
 }
