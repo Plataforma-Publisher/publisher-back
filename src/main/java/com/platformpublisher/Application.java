@@ -23,7 +23,7 @@ public class Application {
 				.locations(migrationLoc)
 				.load();
 		
-		flyway.clean();
+//		flyway.clean();
 
 		flyway.migrate();
 		flyway.info();

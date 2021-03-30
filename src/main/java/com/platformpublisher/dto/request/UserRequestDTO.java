@@ -28,6 +28,7 @@ public class UserRequestDTO {
     @Size(max = 50, message = "Password must be a maximum of 50 characters")
     private String password;
 
+    private String accountActivity;
     private String linkedIn;
     private String github;
 
