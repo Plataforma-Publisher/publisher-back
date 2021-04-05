@@ -1,6 +1,5 @@
 package com.platformpublisher.config.db.migration;
 
-import java.sql.ResultSet;
 import java.sql.Statement;
 
 import org.flywaydb.core.api.migration.BaseJavaMigration;
@@ -12,14 +11,15 @@ public class V1_1_1__Create_User extends BaseJavaMigration {
 		// TODO Auto-generated method stub
 		
 		String createTableUserSQL = "CREATE TABLE users(\n" +
-				"\tId SERIAL PRIMARY KEY,\n" +
-				"\tNome_Completo varchar(150) NOT NULL,\n" +
-				"\tEmail varchar(50) NOT NULL,\n" +
-				"\tSenha varchar(50) NOT NULL,\n" +
-				"\tData_criacao date NOT NULL,\n" +
-				"\tAtividade_Conta boolean NOT NULL,\n" +
-				"\tLinkedIn_Link varchar(255),\n" +
-				"\tGithub_Link varchar(150)\n" +
+				"\tid SERIAL PRIMARY KEY,\n" +
+				"\tfull_name varchar(150) NOT NULL,\n" +
+				"\tname_user varchar(30),\n" +
+				"\temail varchar(50) NOT NULL,\n" +
+				"\tpassword varchar(50) NOT NULL,\n" +
+				"\tcreated_at date NOT NULL,\n" +
+				"\taccount_activity smallint NOT NULL,\n" +
+				"\tlinked_in varchar(100),\n" +
+				"\tgithub varchar(100)\n" +
 				");";
 		
 		Statement create = context.getConnection().createStatement();

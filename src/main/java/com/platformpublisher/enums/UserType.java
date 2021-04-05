@@ -1,0 +1,13 @@
+package com.platformpublisher.enums;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter @AllArgsConstructor
+public enum UserType {
+
+    INACTIVE("Inactive"),
+    ACTIVE("Active");
+
+    private final String description ;
+}
